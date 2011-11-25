@@ -72,6 +72,8 @@ wp_enqueue_script( 'jquery', '1.2,6' );
 
 /* Register function to add logging script */
 add_action( 'wp_footer', array($wplogger, 'flushLogMessages') ); // log scripts
+/* Ensure logging works in admin pages as well */
+add_action ('admin_footer', array ($wplogger, 'flushLogMessages'));
 
 /**
  * WPLogger Class
